@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fight Simulator v11.92</title>
+		<link rel="shortcut-icon" href="images\icon.ico" type="image/x-icon">
+        <link rel="icon" href="images\icon.ico" type="image/x-icon">
+	</head>
+	<body style="background-color:black; color:red">
+<h1>Fight Simulator Beta v11.92</h1>
+<input type="button" id="startButton" value="Start!" style="margin: 5px" onclick="startBattle()"/><input type="button" id="continueRestartButton" value="" style="margin: 5px" onclick=""/></div>
+<p></p>
+<div id="gamescape" style="width:645px; height:485px; border:5px solid black; float:left">
+<div id="playerHealthDisplay" style="margin:5px">Your Health: </div>
+<div id="enemyHealthDisplay" style="margin:5px">Enemy Health: </div>
+<p/><div style="margin:5px">Player Stats:</div>
+<div style="margin:5px">Name: <input type="text" id="playerName" placeholder="Player Name"/><input type="button" id="confirmName" value="Submit" onclick="getPlayerName()"/></div>
+<div id="playerLevel" style="margin:5px">Level: 1</div>
+<div id="playerXP" style="margin:5px">XP: 0/50 (0%)</div>
+<div id="playerAttack" style="margin:5px">Attack: 5</div>
+<div id="playerDefense" style="margin:5px">Defense: 4</div>
+<div id="playerAgility" style="margin:5px">Agility: 1</div>
+<div id="livesLeft" style="margin:5px">Lives Left: 3</div>
+<p/><div id="coinCounter" style="margin:5px">Coins: 0</div>
+<div>
+<input type="button" value="Slide Tackle 20/20" id="choiceButton1" style="margin: 5px;" onclick="slideTackle()" disabled/>
+<input type="button" value="Lightning Dash 15/15" id="choiceButton2" style="margin: 5px" onclick="lightningDash()" disabled/>
+</div>
+<div>
+<input type="button" value="Fire Fists 10/10" id="choiceButton3" style="margin: 5px" onclick="fireFists()" disabled/>
+<input type="button" value="Self-Defibrillation 13/13" id="choiceButton4" style="margin: 5px" onclick="healUseCounter()" disabled/>
+</div>
+<div id="movesInfo" style="margin:5px">Lightning Dash is unlocked at level 2. Fire Fists is unlocked at level 4.</div>
+<div id="shop" style="margin:5px">
+	<br><input type="button" value="Increase Attack Cap by 3" id="attackCap" onclick="increaseAttackCap()"/> - Cost: 7 Coins
+	<br><input type="button" value="Increase Heal Cap By 2" id="shopHeals" onclick="buyHeals()"/> - Cost: 3 Coins
+	<br><input type="button" value="Restore Slide Tackle" onclick="slideTackleUsesLeft = 20; moveCounter();"/> - Cost: 2 Coins
+	<br><input type="button" value="Restore Lightning Dash" onclick="lightningDashUsesLeft = 15; moveCounter();"/> - Cost: 1 Coin
+</div>
+</div>
+</p>
+<h3 style="color:red">Log: </h3>
+<textarea id="log" style="width:400px; height:448px; overflow:scroll; color:orange; background-color:black;" readonly></textarea>
+<div>
+<input type="button" id="saveGameButton" value="Save Game" style="margin: 5px" onclick="saveSlot1()" disabled/>
+<select id="saveSlotChanger" onchange="selectSlot()">
+	<option id="slot1" value="1">Save 1</option>
+	<option id="slot2" value="2">Save 2</option>
+	<option id="slot3" value="3">Save 3</option>
+</select>
+<input type="button" id="loadGameButton" value="Load Game" style="margin: 5px" onclick="loadSlot1()" disabled/>
+</div>
+<div>When you reach level 20, you may challenge the boss!</div>
+<input type="button" value="Challenge Final Boss" onclick="challengeBoss()"/>
+<script src="game.js"></script>
+<style>
+	
+	input {
+		border:2px;
+		border-radius:4px;
+	}
+</style>
+	</body>
+</html>
